@@ -1,16 +1,19 @@
-import Backdrop from "./components/Backdrop";
-import Modal from "./components/Modal";
-import ToDo from "./components/ToDo";
+import { Route, Routes } from "react-router-dom";
+
+import MainNavigation from "./components/layout/MainNavigation";
+import AllMeetupsPage from "./pages/AllMeetups";
+import FavoritesPage from "./pages/Favorites";
+import NewMeetupsPage from "./pages/NewMeetup";
 
 function App() {
   return (
     <div>
-      <h1>My To-Dos!</h1>
-      <ToDo text="Learn React" />
-      <ToDo text="Master React" />
-      <ToDo text="Arula" />
-      <Modal/>
-      <Backdrop/>
+      <MainNavigation />
+      <Routes>
+        <Route exact path="/" element={<AllMeetupsPage />} />
+        <Route path="/new-meetups" element={<NewMeetupsPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+      </Routes> 
     </div>
   );
 }
