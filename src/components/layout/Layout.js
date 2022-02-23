@@ -5,8 +5,8 @@ function Layout(props) {
   return (
     <div>
       <MainNavigation />
-      <main>{props.children}</main>
+      <main className={classes.main}>{props.children}</main>
     </div>
   );
 }
-export default Layout;
+export default Layout; 
